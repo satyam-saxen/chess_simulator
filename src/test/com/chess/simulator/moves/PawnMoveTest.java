@@ -1,7 +1,6 @@
 package test.com.chess.simulator.moves;
 
 import main.com.chess.simulator.Board;
-import main.com.chess.simulator.moves.KingMove;
 import main.com.chess.simulator.moves.PawnMove;
 import main.com.chess.simulator.validators.Validation;
 import org.junit.jupiter.api.Assertions;
