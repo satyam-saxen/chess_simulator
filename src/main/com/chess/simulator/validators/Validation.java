@@ -19,7 +19,7 @@ public class Validation {
 
       if(pieceType.equals("king") || pieceType.equals("queen") || pieceType.equals("pawn"))
       {
-        if(splitArray[1].toUpperCase().charAt(0) >= board.getRowLowerRange() && splitArray[1].toUpperCase().charAt(0) <= board.getRowHigherRange() && splitArray[1].toUpperCase().charAt(1) >= board.getColumnLowerRange() && splitArray[1].toUpperCase().charAt(1) <= board.getColumnHigherRange())
+        if(splitArray[1].toUpperCase().charAt(0) >= board.getRowLowerRange() && splitArray[1].toUpperCase().charAt(0) <= board.getRowHigherRange() && splitArray[1].toUpperCase().charAt(1) >= board.getColumnLowerRange() && splitArray[1].toUpperCase().charAt(1) <= board.getColumnHigherRange() && splitArray[1].length() == 2)
         {
           return new ValidationResponse(true, "All Okay!");
         }
