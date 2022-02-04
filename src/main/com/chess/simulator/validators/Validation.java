@@ -1,6 +1,6 @@
-package chess_simulator.validators;
+package main.chess_simulator.validators;
 
-import chess_simulator.Board;
+import main.chess_simulator.Board;
 
 public class Validation {
   public static Board board;

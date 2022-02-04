@@ -1,6 +1,6 @@
-package chess_simulator;
+package main.chess_simulator;
 
-import chess_simulator.moves.KingMove;
+import main.chess_simulator.moves.KingMove;
 
 public class King extends PieceType {
 

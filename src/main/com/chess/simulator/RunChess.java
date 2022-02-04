@@ -1,7 +1,7 @@
-package chess_simulator;
+package main.chess_simulator;
 
-import chess_simulator.validators.Validation;
-import chess_simulator.validators.ValidationResponse;
+import main.chess_simulator.validators.Validation;
+import main.chess_simulator.validators.ValidationResponse;
 
 import java.util.HashMap;
 import java.util.Map;

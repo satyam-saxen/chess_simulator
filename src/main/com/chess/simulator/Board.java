@@ -1,4 +1,4 @@
-package chess_simulator;
+package main.chess_simulator;
 
 public class Board {
   private char rowLowerRange;

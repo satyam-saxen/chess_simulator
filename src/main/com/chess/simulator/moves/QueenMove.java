@@ -1,7 +1,7 @@
-package chess_simulator.moves;
+package main.chess_simulator.moves;
 
-import chess_simulator.Board;
-import chess_simulator.validators.Validation;
+import main.chess_simulator.Board;
+import main.chess_simulator.validators.Validation;
 
 public class QueenMove implements MoveType {
   @Override

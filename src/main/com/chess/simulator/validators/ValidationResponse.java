@@ -1,4 +1,4 @@
-package chess_simulator.validators;
+package main.chess_simulator.validators;
 
 public class ValidationResponse {
   private Boolean isValid;

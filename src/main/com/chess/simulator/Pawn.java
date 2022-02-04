@@ -1,6 +1,6 @@
-package chess_simulator;
+package main.chess_simulator;
 
-import chess_simulator.moves.PawnMove;
+import main.chess_simulator.moves.PawnMove;
 
 public class Pawn extends PieceType {
   @Override

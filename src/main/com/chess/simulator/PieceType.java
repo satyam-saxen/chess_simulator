@@ -1,6 +1,6 @@
-package chess_simulator;
+package main.chess_simulator;
 
-import chess_simulator.moves.MoveType;
+import main.chess_simulator.moves.MoveType;
 
 public abstract class PieceType {
   MoveType moveType;
