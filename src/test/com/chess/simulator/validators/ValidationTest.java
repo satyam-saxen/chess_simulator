@@ -26,7 +26,7 @@ public class ValidationTest {
     char rowIndex = 'A';
     char columnIndex = '1';
     boolean result = Validation.isPossibleMove(rowIndex, columnIndex);
-    Assertions.assertEquals(true, result);
+    Assertions.assertTrue(result);
   }
 
   @Test
@@ -34,7 +34,7 @@ public class ValidationTest {
     char rowIndex = 'a';
     char columnIndex = '1';
     boolean result = Validation.isPossibleMove(rowIndex, columnIndex);
-    Assertions.assertEquals(false, result);
+    Assertions.assertFalse(result);
   }
 
   @Test
@@ -42,7 +42,7 @@ public class ValidationTest {
     char rowIndex = 'I';
     char columnIndex = '1';
     boolean result = Validation.isPossibleMove(rowIndex, columnIndex);
-    Assertions.assertEquals(false, result);
+    Assertions.assertFalse(result);
   }
 
   @Test
@@ -50,7 +50,7 @@ public class ValidationTest {
     char rowIndex = 'A';
     char columnIndex = '0';
     boolean result = Validation.isPossibleMove(rowIndex, columnIndex);
-    Assertions.assertEquals(false, result);
+    Assertions.assertFalse(result);
   }
 
   @Test
@@ -58,6 +58,6 @@ public class ValidationTest {
     char rowIndex = 'A';
     char columnIndex = '9';
     boolean result = Validation.isPossibleMove(rowIndex, columnIndex);
-    Assertions.assertEquals(false, result);
+    Assertions.assertFalse(result);
   }
 }
