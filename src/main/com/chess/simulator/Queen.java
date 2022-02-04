@@ -1,6 +1,6 @@
-package main.chess_simulator;
+package main.com.chess.simulator;
 
-import main.chess_simulator.moves.QueenMove;
+import main.com.chess.simulator.moves.QueenMove;
 
 public class Queen extends PieceType {
   @Override

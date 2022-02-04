@@ -1,6 +1,4 @@
-package main.chess_simulator;
-
-import main.chess_simulator.RunChess;
+package main.com.chess.simulator;
 
 public class ChessSimulator {
   public static void main(String [] arg) {

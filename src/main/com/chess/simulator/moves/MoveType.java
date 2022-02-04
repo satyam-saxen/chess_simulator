@@ -1,6 +1,6 @@
-package main.chess_simulator.moves;
+package main.com.chess.simulator.moves;
 
-import main.chess_simulator.Board;
+import main.com.chess.simulator.Board;
 
 public interface MoveType {
   String moves(char row, char column, Board board);
