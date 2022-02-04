@@ -24,7 +24,7 @@ public class KingMoveTest {
     KingMove kingMove = new KingMove();
     String response = kingMove.moves(row, column, board);
 
-    Assertions.assertEquals(9, response.split(",").length);
+    Assertions.assertEquals(8, response.split(",").length);
   }
 
   @Test
@@ -34,16 +34,18 @@ public class KingMoveTest {
     char maxRow = 'H';
     char maxColumn = '8';
 
+    int expectedMovesCount = 3;
+
     KingMove kingMove = new KingMove();
     String LeftBottomPositionResponse = kingMove.moves(minRow, minColumn, board);
     String RightBottomPositionResponse = kingMove.moves(minRow, maxColumn, board);
     String LeftTopPositionResponse = kingMove.moves(minRow, maxColumn, board);
     String RightTopPositionResponse = kingMove.moves(maxRow, maxColumn, board);
 
-    Assertions.assertEquals(4, LeftBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(4, RightBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(4, LeftTopPositionResponse.split(",").length);
-    Assertions.assertEquals(4, RightTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.split(",").length);
   }
 
   @Test
@@ -52,6 +54,7 @@ public class KingMoveTest {
     char minColumn = '2';
     char maxRow = 'H';
     char maxColumn = '7';
+    int expectedMovesCount = 5;
 
     KingMove kingMove = new KingMove();
     String LeftBottomPositionResponse = kingMove.moves(minRow, minColumn, board);
@@ -59,10 +62,10 @@ public class KingMoveTest {
     String LeftTopPositionResponse = kingMove.moves(minRow, maxColumn, board);
     String RightTopPositionResponse = kingMove.moves(maxRow, maxColumn, board);
 
-    Assertions.assertEquals(6, LeftBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(6, RightBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(6, LeftTopPositionResponse.split(",").length);
-    Assertions.assertEquals(6, RightTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.split(",").length);
 
     minRow = 'B';
     minColumn = '1';
@@ -74,9 +77,9 @@ public class KingMoveTest {
     LeftTopPositionResponse = kingMove.moves(minRow, maxColumn, board);
     RightTopPositionResponse = kingMove.moves(maxRow, maxColumn, board);
 
-    Assertions.assertEquals(6, LeftBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(6, RightBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(6, LeftTopPositionResponse.split(",").length);
-    Assertions.assertEquals(6, RightTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.split(",").length);
   }
 }

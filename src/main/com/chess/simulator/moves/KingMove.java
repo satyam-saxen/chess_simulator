@@ -12,8 +12,10 @@ public class KingMove implements MoveType {
     for (int i = 0; i < X.length; i++) {
       char rowIndex = (char) (row + X[i]);
       char columnIndex = (char) (column + Y[i]);
-      if (Validation.isPossibleMove(rowIndex, columnIndex))
-        possibleValidMoves.append(rowIndex).append(columnIndex).append(", ");
+      if (Validation.isPossibleMove(rowIndex, columnIndex)) {
+        if (possibleValidMoves.length() > 0) possibleValidMoves.append(", ");
+        possibleValidMoves.append(rowIndex).append(columnIndex);
+      }
     }
     return possibleValidMoves.toString();
   }
