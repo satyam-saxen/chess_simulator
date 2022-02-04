@@ -23,7 +23,7 @@ public class Validation {
         {
           return new ValidationResponse(true, "All Okay!");
         }
-        return new ValidationResponse(false, "Invalid position");
+        return new ValidationResponse(false, "Invalid position!");
       }else {
         return new ValidationResponse(false, "Invalid piece type!");
       }
