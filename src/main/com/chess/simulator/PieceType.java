@@ -1,11 +1,8 @@
 package main.com.chess.simulator;
 
-import main.com.chess.simulator.moves.MoveType;
-
 import java.util.ArrayList;
 
 public abstract class PieceType {
-  MoveType moveType;
   private char row;
   private char column;
 

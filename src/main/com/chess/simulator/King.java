@@ -1,6 +1,7 @@
 package main.com.chess.simulator;
 
 import main.com.chess.simulator.moves.KingMove;
+import main.com.chess.simulator.moves.MoveType;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ public class King extends PieceType {
 
   @Override
   public ArrayList<String> possibleMoves(Board board) {
-    moveType = new KingMove();
+    MoveType moveType = new KingMove();
     char row = this.getRow();
     char column = this.getColumn();
     return moveType.moves(row, column, board);
