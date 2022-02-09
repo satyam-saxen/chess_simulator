@@ -1,7 +1,6 @@
 package main.com.chess.simulator.moves;
 
 import main.com.chess.simulator.Board;
-import main.com.chess.simulator.validators.Validation;
 
 public class KingMove implements MoveType {
   @Override
@@ -12,7 +11,7 @@ public class KingMove implements MoveType {
     for (int i = 0; i < X.length; i++) {
       char rowIndex = (char) (row + X[i]);
       char columnIndex = (char) (column + Y[i]);
-      if (Validation.isPossibleMove(rowIndex, columnIndex)) {
+      if (board.isPossibleMove(rowIndex, columnIndex)) {
         if (possibleValidMoves.length() > 0) possibleValidMoves.append(", ");
         possibleValidMoves.append(rowIndex).append(columnIndex);
       }

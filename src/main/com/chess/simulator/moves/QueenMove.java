@@ -1,7 +1,6 @@
 package main.com.chess.simulator.moves;
 
 import main.com.chess.simulator.Board;
-import main.com.chess.simulator.validators.Validation;
 
 public class QueenMove implements MoveType {
   @Override
@@ -13,13 +12,13 @@ public class QueenMove implements MoveType {
       if (index != 0) {
         char rowIndex = (char) (row + index);
         char columnIndex = (char) (column + index);
-        if (Validation.isPossibleMove(rowIndex, columnIndex)) {
+        if (board.isPossibleMove(rowIndex, columnIndex)) {
           if (possibleValidMoves.length() > 0)
             possibleValidMoves.append(", ");
           possibleValidMoves.append(rowIndex).append(columnIndex);
         }
         columnIndex = (char) (column - index);
-        if (Validation.isPossibleMove(rowIndex, columnIndex)) {
+        if (board.isPossibleMove(rowIndex, columnIndex)) {
           if (possibleValidMoves.length() > 0)
             possibleValidMoves.append(", ");
           possibleValidMoves.append(rowIndex).append(columnIndex);

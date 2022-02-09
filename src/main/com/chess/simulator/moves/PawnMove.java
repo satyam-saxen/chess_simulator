@@ -1,13 +1,12 @@
 package main.com.chess.simulator.moves;
 
 import main.com.chess.simulator.Board;
-import main.com.chess.simulator.validators.Validation;
 
 public class PawnMove implements MoveType {
   @Override
   public String moves(char row, char column, Board board) {
     String possibleValidMoves;
-    if(Validation.isPossibleMove((char) (row+1),column))
+    if(board.isPossibleMove((char) (row+1),column))
     {
       possibleValidMoves = ((char)(row+1) +""+column);
       return possibleValidMoves;
