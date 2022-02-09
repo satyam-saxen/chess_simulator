@@ -2,6 +2,8 @@ package main.com.chess.simulator;
 
 import main.com.chess.simulator.moves.MoveType;
 
+import java.util.ArrayList;
+
 public abstract class PieceType {
   MoveType moveType;
   private char row;
@@ -28,5 +30,5 @@ public abstract class PieceType {
     this.column = column;
   }
 
-  public abstract String possibleMoves(Board board);
+  public abstract ArrayList<String> possibleMoves(Board board);
 }

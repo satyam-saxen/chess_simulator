@@ -2,6 +2,8 @@ package main.com.chess.simulator;
 
 import main.com.chess.simulator.moves.PawnMove;
 
+import java.util.ArrayList;
+
 public class Pawn extends PieceType {
 
   public Pawn(char row, char column) {
@@ -9,7 +11,7 @@ public class Pawn extends PieceType {
   }
 
   @Override
-  public String possibleMoves(Board board) {
+  public ArrayList<String> possibleMoves(Board board) {
     moveType = new PawnMove();
     char row = this.getRow();
     char column = this.getColumn();
