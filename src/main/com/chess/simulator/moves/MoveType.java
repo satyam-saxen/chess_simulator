@@ -2,6 +2,8 @@ package main.com.chess.simulator.moves;
 
 import main.com.chess.simulator.Board;
 
+import java.util.ArrayList;
+
 public interface MoveType {
-  String moves(char row, char column, Board board);
+  ArrayList<String> moves(char row, char column, Board board);
 }
