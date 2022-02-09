@@ -1,6 +1,5 @@
 package main.com.chess.simulator;
 
-import main.com.chess.simulator.validators.Validation;
 import main.com.chess.simulator.validators.ValidationResponse;
 
 import java.util.HashMap;
@@ -12,7 +11,6 @@ public class RunChess {
 
   public void run() {
     Board board = new Board('A', 'H', '1', '8');
-    Validation.board = board;
 
     PieceMap.put("king", new King());
     PieceMap.put("queen", new Queen());
@@ -27,7 +25,7 @@ public class RunChess {
       if (inputString.equals("1")) {
         playChess = false;
       } else {
-        ValidationResponse response = Validation.isValidInput(inputString);
+        ValidationResponse response = board.isValidInput(inputString);
         if (response.getValid()) {
           String[] input = inputString.split(" ");
           PieceType pieceType = PieceMap.get(input[0].toLowerCase());
