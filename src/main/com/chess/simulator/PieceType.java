@@ -23,5 +23,5 @@ public abstract class PieceType {
     this.column = column;
   }
 
-  public abstract String PossibleMoves(Board board);
+  public abstract String possibleMoves(Board board);
 }

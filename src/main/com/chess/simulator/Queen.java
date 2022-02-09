@@ -4,7 +4,7 @@ import main.com.chess.simulator.moves.QueenMove;
 
 public class Queen extends PieceType {
   @Override
-  public String PossibleMoves(Board board) {
+  public String possibleMoves(Board board) {
     moveType = new QueenMove();
     char row = this.getRow();
     char column = this.getColumn();

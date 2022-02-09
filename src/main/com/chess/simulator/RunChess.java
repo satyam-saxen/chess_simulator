@@ -31,7 +31,7 @@ public class RunChess {
           PieceType pieceType = PieceMap.get(input[0].toLowerCase());
           pieceType.setRow(input[1].toUpperCase().charAt(0));
           pieceType.setColumn(input[1].toUpperCase().charAt(1));
-          String outputString = pieceType.PossibleMoves(board);
+          String outputString = pieceType.possibleMoves(board);
           System.out.println(outputString);
         } else {
           System.out.println(response.getDescription());
