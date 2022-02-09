@@ -2,25 +2,17 @@ package test.com.chess.simulator.moves;
 
 import main.com.chess.simulator.Board;
 import main.com.chess.simulator.moves.KingMove;
-import main.com.chess.simulator.validators.Validation;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static main.com.chess.simulator.validators.Validation.board;
-
 public class KingMoveTest {
-  @BeforeEach
-  void setup() {
-    Board board = new Board('A', 'H', '1', '8');
-    Validation.board = board;
-  }
 
   @Test
   public void testKingMove() {
     char row = 'D';
     char column = '4';
 
+    Board board = new Board('A', 'H', '1', '8');
     KingMove kingMove = new KingMove();
     String response = kingMove.moves(row, column, board);
 
@@ -33,6 +25,7 @@ public class KingMoveTest {
     char minColumn = '1';
     char maxRow = 'H';
     char maxColumn = '8';
+    Board board = new Board('A', 'H', '1', '8');
 
     int expectedMovesCount = 3;
 
@@ -55,6 +48,7 @@ public class KingMoveTest {
     char maxRow = 'H';
     char maxColumn = '7';
     int expectedMovesCount = 5;
+    Board board = new Board('A', 'H', '1', '8');
 
     KingMove kingMove = new KingMove();
     String LeftBottomPositionResponse = kingMove.moves(minRow, minColumn, board);

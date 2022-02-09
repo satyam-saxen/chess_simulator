@@ -2,24 +2,16 @@ package test.com.chess.simulator.moves;
 
 import main.com.chess.simulator.Board;
 import main.com.chess.simulator.moves.QueenMove;
-import main.com.chess.simulator.validators.Validation;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static main.com.chess.simulator.validators.Validation.board;
 
 public class QueenMoveTest {
-  @BeforeEach
-  void setup() {
-    Board board = new Board('A', 'H', '1', '8');
-    Validation.board = board;
-  }
-
   @Test
   public void testQueenMove() {
     char row = 'E';
     char column = '4';
+    Board board = new Board('A', 'H', '1', '8');
 
     QueenMove queenMove = new QueenMove();
     String response = queenMove.moves(row, column, board);
@@ -33,6 +25,7 @@ public class QueenMoveTest {
     char minColumn = '1';
     char maxRow = 'H';
     char maxColumn = '8';
+    Board board = new Board('A', 'H', '1', '8');
 
     int expectedMovesCount = 21;
 
@@ -54,6 +47,8 @@ public class QueenMoveTest {
     char minColumn = '2';
     char maxRow = 'H';
     char maxColumn = '7';
+    Board board = new Board('A', 'H', '1', '8');
+    
     int expectedMovesCount = 21;
 
     QueenMove queenMove = new QueenMove();
