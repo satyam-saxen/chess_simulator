@@ -7,6 +7,11 @@ public abstract class PieceType {
   private char row;
   private char column;
 
+  public PieceType(char row, char column) {
+    this.row = row;
+    this.column = column;
+  }
+
   public char getRow() {
     return row;
   }

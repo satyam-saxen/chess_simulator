@@ -4,6 +4,10 @@ import main.com.chess.simulator.moves.KingMove;
 
 public class King extends PieceType {
 
+  public King(char row, char column) {
+    super(row, column);
+  }
+
   @Override
   public String possibleMoves(Board board) {
     moveType = new KingMove();
