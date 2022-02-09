@@ -2,6 +2,7 @@ package main.com.chess.simulator;
 
 import main.com.chess.simulator.validators.ValidationResponse;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RunChess {
@@ -20,10 +21,10 @@ public class RunChess {
       } else {
         ValidationResponse response = board.isValidInput(inputString);
         if (response.getValid()) {
-          String[] input = inputString.split(" ");
-          PieceType pieceType = getPieceTypeByPieceName(input[0].toLowerCase(), input[1].toUpperCase().charAt(0), input[1].toUpperCase().charAt(1));
-          String outputString = pieceType.possibleMoves(board);
-          System.out.println(outputString);
+          Piece piece = IOUtil.getPieceFromInputString(inputString);
+          PieceType pieceType = getPieceTypeByPieceName(piece.getName(), piece.getRow(), piece.getColumn());
+          ArrayList<String> possibleMoves = pieceType.possibleMoves(board);
+          IOUtil.printOutputForResponseList(possibleMoves);
         } else {
           System.out.println(response.getDescription());
         }
