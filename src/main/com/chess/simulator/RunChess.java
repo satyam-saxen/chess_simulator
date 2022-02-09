@@ -2,19 +2,12 @@ package main.com.chess.simulator;
 
 import main.com.chess.simulator.validators.ValidationResponse;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class RunChess {
-  Map<String, PieceType> PieceMap = new HashMap<>();
 
   public void run() {
     Board board = new Board('A', 'H', '1', '8');
-
-    PieceMap.put("king", new King());
-    PieceMap.put("queen", new Queen());
-    PieceMap.put("pawn", new Pawn());
 
     Scanner scanner = new Scanner(System.in);
 
@@ -28,9 +21,7 @@ public class RunChess {
         ValidationResponse response = board.isValidInput(inputString);
         if (response.getValid()) {
           String[] input = inputString.split(" ");
-          PieceType pieceType = PieceMap.get(input[0].toLowerCase());
-          pieceType.setRow(input[1].toUpperCase().charAt(0));
-          pieceType.setColumn(input[1].toUpperCase().charAt(1));
+          PieceType pieceType = getPieceTypeByPieceName(input[0].toLowerCase(), input[1].toUpperCase().charAt(0), input[1].toUpperCase().charAt(1));
           String outputString = pieceType.possibleMoves(board);
           System.out.println(outputString);
         } else {
@@ -40,5 +31,18 @@ public class RunChess {
       }
 
     } while (playChess);
+  }
+
+  public PieceType getPieceTypeByPieceName(String pieceName, char row, char column) {
+    switch (pieceName) {
+      case "king":
+        return new King(row, column);
+      case "queen":
+        return new Queen(row, column);
+      case "pawn":
+        return new Pawn(row, column);
+      default:
+        return null;
+    }
   }
 }
