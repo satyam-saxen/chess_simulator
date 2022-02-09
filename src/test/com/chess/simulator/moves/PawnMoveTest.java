@@ -5,6 +5,8 @@ import main.com.chess.simulator.moves.PawnMove;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 public class PawnMoveTest {
   @Test
   public void testPawnMove() {
@@ -13,9 +15,10 @@ public class PawnMoveTest {
     Board board = new Board('A', 'H', '1', '8');
     String expectedMove = "B1";
     PawnMove pawnMove = new PawnMove();
-    String response = pawnMove.moves(row, column, board);
+    ArrayList<String> response = pawnMove.moves(row, column, board);
 
-    Assertions.assertEquals(expectedMove, response);
+    Assertions.assertEquals(1, response.size());
+    Assertions.assertEquals(expectedMove, response.get(0));
   }
 
   @Test
@@ -23,10 +26,9 @@ public class PawnMoveTest {
     char row = 'H';
     char column = '1';
     Board board = new Board('A', 'H', '1', '8');
-    String expectedMove = "No Move Possible, you are standing on the last row";
     PawnMove pawnMove = new PawnMove();
-    String response = pawnMove.moves(row, column, board);
+    ArrayList<String> response = pawnMove.moves(row, column, board);
 
-    Assertions.assertEquals(expectedMove, response);
+    Assertions.assertEquals(0, response.size());
   }
 }

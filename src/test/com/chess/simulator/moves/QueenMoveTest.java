@@ -5,6 +5,8 @@ import main.com.chess.simulator.moves.QueenMove;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 
 public class QueenMoveTest {
   @Test
@@ -14,9 +16,9 @@ public class QueenMoveTest {
     Board board = new Board('A', 'H', '1', '8');
 
     QueenMove queenMove = new QueenMove();
-    String response = queenMove.moves(row, column, board);
+    ArrayList<String> response = queenMove.moves(row, column, board);
 
-    Assertions.assertEquals(27, response.split(",").length);
+    Assertions.assertEquals(27, response.size());
   }
 
   @Test
@@ -30,15 +32,15 @@ public class QueenMoveTest {
     int expectedMovesCount = 21;
 
     QueenMove queenMove = new QueenMove();
-    String LeftBottomPositionResponse = queenMove.moves(minRow, minColumn, board);
-    String RightBottomPositionResponse = queenMove.moves(minRow, maxColumn, board);
-    String LeftTopPositionResponse = queenMove.moves(minRow, maxColumn, board);
-    String RightTopPositionResponse = queenMove.moves(maxRow, maxColumn, board);
+    ArrayList<String> LeftBottomPositionResponse = queenMove.moves(minRow, minColumn, board);
+    ArrayList<String> RightBottomPositionResponse = queenMove.moves(minRow, maxColumn, board);
+    ArrayList<String> LeftTopPositionResponse = queenMove.moves(minRow, maxColumn, board);
+    ArrayList<String> RightTopPositionResponse = queenMove.moves(maxRow, maxColumn, board);
 
-    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.size());
   }
 
   @Test
@@ -48,19 +50,19 @@ public class QueenMoveTest {
     char maxRow = 'H';
     char maxColumn = '7';
     Board board = new Board('A', 'H', '1', '8');
-    
+
     int expectedMovesCount = 21;
 
     QueenMove queenMove = new QueenMove();
-    String LeftBottomPositionResponse = queenMove.moves(minRow, minColumn, board);
-    String RightBottomPositionResponse = queenMove.moves(minRow, maxColumn, board);
-    String LeftTopPositionResponse = queenMove.moves(minRow, maxColumn, board);
-    String RightTopPositionResponse = queenMove.moves(maxRow, maxColumn, board);
+    ArrayList<String> LeftBottomPositionResponse = queenMove.moves(minRow, minColumn, board);
+    ArrayList<String> RightBottomPositionResponse = queenMove.moves(minRow, maxColumn, board);
+    ArrayList<String> LeftTopPositionResponse = queenMove.moves(minRow, maxColumn, board);
+    ArrayList<String> RightTopPositionResponse = queenMove.moves(maxRow, maxColumn, board);
 
-    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.size());
 
     minRow = 'B';
     minColumn = '1';
@@ -72,9 +74,9 @@ public class QueenMoveTest {
     LeftTopPositionResponse = queenMove.moves(minRow, maxColumn, board);
     RightTopPositionResponse = queenMove.moves(maxRow, maxColumn, board);
 
-    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.split(",").length);
-    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.split(",").length);
+    Assertions.assertEquals(expectedMovesCount, LeftBottomPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, RightBottomPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, LeftTopPositionResponse.size());
+    Assertions.assertEquals(expectedMovesCount, RightTopPositionResponse.size());
   }
 }
